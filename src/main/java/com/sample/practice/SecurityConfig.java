@@ -63,7 +63,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-//        auth.userDetailsService(userDetailsService).passwordEncoder(getPasswordEncoder());
         configAuthentication(auth);
     }
 
@@ -77,17 +76,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .authoritiesByUsernameQuery("select username, permission from roles r inner join role_user ru on r.id = ru.role_id" +
                         " inner join user u on ru.user_id=u.id" +
                         " where u.username=?")
-//                .authoritiesByUsernameQuery("select username, permission from roles r, role_user ru, user u where r.id = ru.role_id and ru.user_id=u.id and u.username=?;")
         ;
     }
-
-    /*@Override
-    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.inMemoryAuthentication()
-                .passwordEncoder(getPasswordEncoder())
-                .withUser("root").password("library").roles("ADMIN")
-                .and()
-                .withUser("souvik").password("zomato").roles("ADMIN", "EDITOR");
-    }*/
 
 }

@@ -1,28 +1,10 @@
-#spring:
-#  application:
-#    name: aws-sample-deploy
-#  datasource:
-#    password: root
-#    testWhileIdle: true
-#    url: jdbc:mysql://localhost:3306/forFun?createDatabaseIfNotExist=true&useUnicode=yes&characterEncoding=UTF-8
-#    username: root
-#    validationQuery: SELECT 1
-#  jpa:
-#    hibernate:
-#      ddl-auto: update
-#      naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
-#    properties:
-#      hibernate:
-#        dialect: org.hibernate.dialect.MySQL8Dialect
-#    show-sql: true
-
 spring:
   application:
     name: uaa-service
   datasource:
-    url: jdbc:mysql://localhost:3306/forFun?createDatabaseIfNotExist=true
+    url: jdbc:mysql://avengers-db-instance.chszpfohfria.us-east-1.rds.amazonaws.com/forFun
     username: root
-    password: root
+    password: rootlibrary
     driver-class-name: com.mysql.jdbc.Driver
     initialization-mode: always
   jpa:
