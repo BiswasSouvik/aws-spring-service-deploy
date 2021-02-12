@@ -1,0 +1,19 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      java: corretto8
+  build:
+    commands:
+      - mvn test 
+  post_build:
+    commands:
+      - mvn install
+artifacts:
+  files:
+    - target/aws-microservice-deploy-0.0.1-SNAPSHOT.jar
+    - appspec.yml
+    - start.sh
+    - stop.sh
+  discard-paths: yes
