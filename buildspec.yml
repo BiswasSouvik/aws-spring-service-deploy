@@ -6,10 +6,7 @@ phases:
       java: corretto8
   build:
     commands:
-      - mvn test 
-  post_build:
-    commands:
-      - mvn install
+      - mvn clean install -DskipTests
 artifacts:
   files:
     - target/aws-microservice-deploy-0.0.1-SNAPSHOT.jar
